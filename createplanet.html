@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Own Exoplanet</title>
+    <link rel="stylesheet" href="createplanet.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .controls {
+            margin-bottom: 20px;
+        }
+
+        #planetSimulation {
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Create Your Own Planet</h1>
+        <div class="controls">
+            <label for="biome">Biome:</label>
+            <select id="biome">
+                <option value="ice">Ice</option>
+                <option value="desert">Desert</option>
+                <option value="gas">Gas</option>
+                <option value="rocky">Rocky</option>
+            </select>
+
+            <label for="life">Life Form:</label>
+            <select id="life">
+                <option value="none">None</option>
+                <option value="microbial">Microbial</option>
+                <option value="plant">Plant</option>
+                <option value="animal">Animal</option>
+            </select>
+
+            <label for="size">Planet Size (Earth Radii):</label>
+            <input type="number" id="size" value="1" min="0.5" max="10">
+
+            <label for="temperature">Average Temperature (°C):</label>
+            <input type="number" id="temperature" value="15" min="-200" max="500">
+
+            <label for="gravity">Gravity (g, relative to Earth):</label>
+            <input type="number" id="gravity" value="1" min="0.1" max="5">
+
+            <label for="atmosphere">Atmospheric Composition:</label>
+            <select id="atmosphere">
+                <option value="oxygen_nitrogen">Oxygen-Nitrogen (Earth-like)</option>
+                <option value="carbon_dioxide">Carbon Dioxide (Venus-like)</option>
+                <option value="methane">Methane (Titan-like)</option>
+                <option value="hydrogen_helium">Hydrogen-Helium (Gas Giant-like)</option>
+            </select>
+
+            <button id="generatePlanet">Generate Planet</button>
+        </div>
+        <div id="planetSimulation"></div>
+        <div id="exoplanetDetails"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js"></script>
+    <script src="createplanet.js"></script>
+</body>
+
+</html>
